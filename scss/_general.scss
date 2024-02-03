@@ -1,0 +1,14 @@
+$colorText: #2F3035;
+$accentColor: #1C62CD;
+$lightGrey: #F0F0F4;
+$greyText: #C4C4C4;
+$white: #ffffff;
+$textMain: 'SFProDisplay', sans-serif;
+$textTitle: 'Barlow', sans-serif;
+
+@mixin flex($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: wrap;
+}
