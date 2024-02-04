@@ -5,10 +5,29 @@ $greyText: #C4C4C4;
 $white: #ffffff;
 $textMain: 'SFProDisplay', sans-serif;
 $textTitle: 'Barlow', sans-serif;
+$container: 1200px;
+$mCenter: 0 auto;
+
 
 @mixin flex($jc, $ai) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
     flex-wrap: wrap;
+}
+
+
+body {
+    background-color: $white;
+    color: $colorText;
+    font-family: $textMain;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: $container;
+    padding: 0 15px;
+    margin: $mCenter;
 }

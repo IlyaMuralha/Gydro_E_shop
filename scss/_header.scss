@@ -1,0 +1,85 @@
+.header__top-inner {
+    @include flex(space-between, center);
+    min-height: 122px;
+    font-weight: 700;
+}
+.menu__item {
+    display: inline-block;
+}
+.menu__item + .menu__item {
+    padding-left: 50px;
+}
+.header__top-box {
+    @include flex(space-between, center);
+    .header__adress {
+        margin-right: 60px;
+        width: 265px;
+        padding-left: 30px;
+        position: relative;
+        &::before {
+           content: "";
+           position: absolute;
+           background-image: url(../icons/addres_icon.svg);
+           width: 30px;
+           height: 30px;
+           left: 0;
+           bottom: 6px;
+        }
+    }
+}
+.user-list {
+    margin-right: 15px;
+    &__item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .basket {
+        position: relative;
+        &__count {
+           position: absolute;
+           font-size: 10px;
+           line-height: 20px;
+           font-weight: 500;
+           background-color: $accentColor;
+           width: 20px;
+           height: 20px;
+           border-radius: 50%;
+           color: $white;
+           text-align: center;
+           right: -14px;
+           bottom: -4px;
+        }
+    }
+}
+.menu-categories {
+    @include flex(space-around, center);
+    background-color: $lightGrey;
+    min-height: 53px;
+    &__item {
+        position: relative;
+    }
+    &__link {
+        text-transform: capitalize;
+        padding: 15px 0 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: $accentColor;
+            right: 0;
+            left: auto;
+            bottom: -2px;
+            transition: all .3s;
+        }
+        &:hover::before {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+    }
+}
