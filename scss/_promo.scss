@@ -1,4 +1,140 @@
 .promo {
-    padding: 80px 0 75px;
-    @include flex(space-between, center);
+    padding: 80px 0 75px; 
+    &__inner {
+        @include flex(space-between, flex-start);
+    }
+    .promo__slider {
+        max-width: 870px;
+        position: relative;
+        .promo__slider-img {
+            object-fit: cover;
+            min-height: 400px;
+        }
+        .promo-slick-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .promo-slick-btnprev {
+            left: 20px;
+        }
+        .promo-slick-btnnext {
+            right: 20px;
+        }
+        .slick-dots {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            li {
+                display: inline-block;
+                padding: 0 5px;
+            }
+            button {
+                padding: 0;
+                font-size: 0;
+                width: 11px;
+                height: 11px;
+                border: 1px solid $white;
+                border-radius: 50%;
+                background-color: transparent;
+            }
+            .slick-active button {
+                background-color: $white;
+            }
+        }
+    }
+    .promo__card {
+        @include flex(space-between, center);
+        flex-direction: column;
+        max-width: 265px;
+        align-self: stretch;
+        text-align: center;
+        border: 3px solid #CDCDCD;
+        border-radius: 5px;
+        .sale-item__top {
+            align-self: stretch;
+            @include flex(space-between, flex-start);
+            
+        }
+        .sale-item__icon {
+            color: $white;
+            background-color: $accentColor;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 20px;
+            letter-spacing: 0.2em;
+        }
+        .sale-item__price {
+            text-align: right;
+        }
+        .sale-item__price-new {
+            font-size: 27px;
+            line-height: 32px;
+            font-weight: 700;
+            color: $accentColor;
+            margin-right: 6px;
+            padding-right: 20px;
+            position: relative;
+            &::after {
+                content: "";
+                background-image: url("../icons/rub.svg");
+                position: absolute;
+                right: 0;
+                bottom: 5px;
+                width: 15px;
+                height: 18px;
+            }
+        }
+        .sale-item__price-old {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 17px;
+            color: $greyText;
+            margin-right: 16px;
+            padding-left: 3px;
+            padding-right: 6px;
+            position: relative;
+            background-image: url("../icons/old_price_line.svg") ;
+            &::after {
+                content: "";
+                background-image: url("../icons/rub_old.svg");
+                position: absolute; 
+                right: -9px;
+                bottom: 2px;
+                width: 8px;
+                height: 10px;
+            }
+        }
+        .sale-item__img {
+            object-fit: contain;
+        }
+        .sale-item__title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            padding: 0 30px 0;
+        }
+        .sale-item__footer {
+             background-color: $lightGrey;
+             font-size: 18px;
+             line-height: 21px;
+             padding: 26px 20px 0;
+             span {
+                display: inline-block;
+                font-family: $textTitle;
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 700;
+                color: $accentColor;
+                margin-bottom: 25px;
+             }
+        }
+        
+    }
 }
